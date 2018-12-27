@@ -1,4 +1,4 @@
-StartUP CasparCG Server
+StartUP CasparCG Server:
 
 Edit config visudo
 > sudo visudo
@@ -20,3 +20,17 @@ create and compil server.c
 Copy file to /bin
 
 Install StartUp Aplication and add /bin/server
+
+System without monitor attached:
+
+generate config monitor edid.conf NVIDIA Util 
+copy /etc/X11/edid.conf
+edit /etc/X11/xorg.conf
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "GeForce blabla
+    Option "ConnectedMonitor" "CRT-0"
+    Option "CustomEDID" "CRT-0:/etc/X11/edid.conf"
+EndSection
